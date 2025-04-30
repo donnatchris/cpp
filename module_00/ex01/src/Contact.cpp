@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 15:02:55 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/04/29 16:42:16 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/04/30 08:04:21 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	Contact::displayContact() {
 	std::cout << "First name :\t\t" << _first_name << std::endl;
 	std::cout << "Last name :\t\t" << _last_name << std::endl;
 	std::cout << "Nick name :\t\t" << _nick_name << std::endl;
+	std::cout << "Phone Number :\t\t" << _phone_number << std::endl;
 	std::cout << "Darkest secret :\t" << _darkest_secret << std::endl;
 	std::cout << std::endl;
 }
