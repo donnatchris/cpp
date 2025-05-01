@@ -6,11 +6,11 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 15:02:55 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/04/30 08:04:21 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/01 09:50:44 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "../include/Contact.hpp"
 
 Contact::Contact() :
 	_first_name(""),

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 15:05:21 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/04/29 16:44:16 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/01 09:50:33 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
-#include "colors.hpp"
+#include "../include/Contact.hpp"
+#include "../include/PhoneBook.hpp"
+#include "../include/colors.hpp"
 
 void	welcomeMessage() {
 	std::cout << YELLOW "Type ADD to create a new contact, ";
