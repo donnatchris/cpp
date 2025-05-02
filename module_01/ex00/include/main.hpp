@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 09:40:51 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 09:40:52 by chdonnat         ###   ########.fr       */
+/*   Created: 2025/05/02 10:27:19 by chdonnat          #+#    #+#             */
+/*   Updated: 2025/05/02 11:20:37 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-int main(int ac, char **av)
-{
-    if (ac < 2)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return (0);
-    }
-    int i(1);
-    while (av[i])
-    {
-        int j(0);
-        while (av[i][j])
-            std::cout << (char)std::toupper(av[i][j++]);
-        i++;
-    }
-    std::cout << std::endl;
-    return (0);
-}
+# include <iostream>
+# include <string>
+# include "../include/Zombie.hpp"
+
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
+
+#endif

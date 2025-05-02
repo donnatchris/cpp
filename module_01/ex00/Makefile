@@ -5,19 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/02 09:41:12 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/02 09:41:13 by chdonnat         ###   ########.fr        #
+#    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
+#    Updated: 2025/05/02 10:42:12 by chdonnat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := PhoneBook
+NAME    := BraiiiiiiinnnzzzZ
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
 
-SRC     := $(SRCDIR)/main.cpp \
-		   $(SRCDIR)/Contact.cpp \
-		   $(SRCDIR)/PhoneBook.cpp		   
+SRC     :=	$(SRCDIR)/main.cpp \
+			$(SRCDIR)/newZombie.cpp \
+			$(SRCDIR)/randomChump.cpp \
+			$(SRCDIR)/Zombie.cpp
 
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 

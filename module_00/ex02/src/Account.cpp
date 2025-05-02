@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 09:46:07 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/02 09:15:08 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/02 09:55:42 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,6 @@ int		Account::checkAmount( void ) const
 	return (_amount);
 }
 
-// [19920104_091532] index:0;amount:42;deposits:0;withdrawals:0
-
 void	Account::displayStatus( void ) const
 {
 	_displayTimestamp();
@@ -137,7 +135,6 @@ bool	Account::makeWithdrawal( int withdrawal )
 }
 
 /* ************************* other public methods ************************** */
-// [19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
 
 void	Account::displayAccountsInfos()
 {
