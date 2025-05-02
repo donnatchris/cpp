@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 10:26:48 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 11:40:07 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:21:31 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/main.hpp"
+# include <iostream>
+# include <string>
+# include "../include/Zombie.hpp"
 
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 int main( void )
 {
 	std::cout << "Creating 2 zombies by object creation:" << std::endl;
