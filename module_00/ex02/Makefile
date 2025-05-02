@@ -1,11 +1,10 @@
-NAME    := Account
+NAME    := GlobalBanksters
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
 
 SRC     :=	$(SRCDIR)/tests.cpp \
 			$(SRCDIR)/Account.cpp
-
 
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
