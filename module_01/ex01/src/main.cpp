@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 12:59:30 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 12:59:30 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/02 18:44:33 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,10 @@ int main(int ac, char **av)
 		return(errorExit());
 
 	horde = zombieHorde(number, av[2]);
+
+	for (int i = 0; i < number; i++)
+		horde[i].announce();
+
+	delete[] horde;
 	return (0);
 }

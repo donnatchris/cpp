@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 10:26:48 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 11:48:26 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:54:12 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main( void )
 		heap_z[i] = newZombie(heap_names[i]);
 	std::cout << std::endl;
 	for (int i = 0; i < 5; i++)
-		heap_z[i].announce();qq
+		heap_z[i].announce();
 	std::cout << std::endl;
 
 

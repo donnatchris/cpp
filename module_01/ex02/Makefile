@@ -6,18 +6,16 @@
 #    By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/02 18:44:53 by christophed      ###   ########.fr        #
+#    Updated: 2025/05/02 18:54:28 by christophed      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := MoreBrains
+NAME    := HiThisIsBrain
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
 
-SRC     :=	$(SRCDIR)/main.cpp \
-			$(SRCDIR)/Zombie.cpp \
-			$(SRCDIR)/zombieHorde.cpp
+SRC     :=	$(SRCDIR)/main.cpp
 
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
