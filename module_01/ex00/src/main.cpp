@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 10:26:48 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 14:21:31 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/02 11:48:26 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 Zombie*	newZombie( std::string name );
 void	randomChump( std::string name );
+
 int main( void )
 {
 	std::cout << "Creating 2 zombies by object creation:" << std::endl;
@@ -34,6 +35,10 @@ int main( void )
 	for (int i = 0; i < 5; i++)
 		heap_z[i] = newZombie(heap_names[i]);
 	std::cout << std::endl;
+	for (int i = 0; i < 5; i++)
+		heap_z[i].announce();qq
+	std::cout << std::endl;
+
 
 	std::cout << "All zombies have been created" << std::endl;
 	std::cout << std::endl;
