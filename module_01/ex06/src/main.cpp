@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 11:20:29 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/03 12:09:00 by christophed      ###   ########.fr       */
+/*   Created: 2025/05/03 11:58:42 by christophed       #+#    #+#             */
+/*   Updated: 2025/05/03 12:28:00 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#include <iostream>
+#include <string>
+#include "../include/Harl.hpp"
 
-# include <string>
-
-class	Harl
+void	exit_error()
 {
-	public:
+	std::cout << "Error: One argument is needed." << std::endl;
+	exit(1);
+}
 
-		Harl();
-		~Harl();
-
-		void	complain( std::string level );
-
-	private:
-
-		void	debug( void );
-		void	info( void );
-		void	warning( void );
-		void	error( void );
-};
-
-#endif
+int	main(int ac, char **av)
+{
+	if (ac != 2)
+		exit_error();
+	
+	Harl	harl;
+	harl.complain(std::string(av[1]));
+	return (0);
+}
