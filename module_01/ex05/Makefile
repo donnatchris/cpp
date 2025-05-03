@@ -6,7 +6,7 @@
 #    By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/03 11:18:11 by christophed      ###   ########.fr        #
+#    Updated: 2025/05/03 12:03:15 by christophed      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
 
-SRC     :=	$(SRCDIR)/main.cpp
+SRC     :=	$(SRCDIR)/main.cpp \
+			$(SRCDIR)/Harl.cpp
 
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 

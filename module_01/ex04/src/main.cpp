@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:20:42 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/03 11:13:36 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/03 11:44:05 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ int	main(int ac, char **av)
 	}
 	
 	std::string		replaceFile(std::string(av[1]) + ".replace");
-	std::cout << "new filename is " << replaceFile << std::endl;
 	std::ofstream	writeStream(replaceFile.c_str());
 	if (!writeStream.is_open() || !writeStream.good())
 	{
@@ -73,14 +72,13 @@ int	main(int ac, char **av)
 		exit_error(2);
 	}
 
-	std::string	target(av[2]);
-	std::string	replacer(av[3]);
-	std::string	line;
+	std::string	target(av[2]), replacer(av[3]), line;
 	while (std::getline(readStream, line))
 	{
 		std::string	newline = search_n_replace(line, target, replacer);
 		writeStream << newline << std::endl;
 	}
+	std::cout << "File " << replaceFile << " has been created." << std::endl;
 	
 	readStream.close();
 	writeStream.close();
