@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 21:25:17 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/04 23:35:39 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/05 00:03:50 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,22 @@
 int	main( void )
 {
 	ClapTrap	terminator("Terminator");
-	ClapTrap	chappy("Chappy");
-
-	std::cout << "Terminator has begun a fight!" << std::endl;
-	terminator.displayStatus();
+	
 	terminator.attack("Martine");
 	terminator.attack("Sarah Connor");
 	terminator.beRepaired(2);
 	terminator.beRepaired(8);
 	terminator.beRepaired(8);
 	terminator.beRepaired(8);
+	terminator.beRepaired(4);
 	terminator.beRepaired(8);
+	terminator.beRepaired(7);
 	terminator.beRepaired(8);
-	terminator.beRepaired(8);
-	terminator.beRepaired(8);
-	terminator.beRepaired(8);
+	terminator.beRepaired(12);
 	terminator.attack("José");
-
-	std::cout << "\nHere comes a new challenger!" << std::endl;
-	chappy.displayStatus();
+	
+	ClapTrap	chappy("Chappy");
+	
 	chappy.attack("Cthulhu");
 	chappy.takeDamage(5);
 	chappy.beRepaired(2);

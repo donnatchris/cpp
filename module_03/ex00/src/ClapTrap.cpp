@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 21:25:08 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/04 23:33:29 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/05 00:05:29 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,20 @@ ClapTrap::ClapTrap( const ClapTrap& other ) :
 	_hitPoints(other._hitPoints),
 	_energyPoints(other._energyPoints),
 	_attackDamage(other._attackDamage)
-{}
+{
+	std::cout << "ClapTrap " << _name
+		<< " has just been born and is a copy of "
+		<< other.getName() << "!" << std::endl;
+	displayStatus();
+}
 
 /* ******************************* destructor ****************************** */
 
 ClapTrap::~ClapTrap()
-{}
+{
+	std::cout << "ClapTrap object named " << _name
+		<< " has been destroyed." << std::endl;
+}
 
 /* ********************** copy assignment operator ************************** */
 
@@ -57,7 +65,11 @@ ClapTrap::ClapTrap( const std::string& name ) :
 	_hitPoints(10),
 	_energyPoints(10),
 	_attackDamage(0)
-{}
+{
+	std::cout << "Here comes a new challenger: "
+		<< "ClapTrap " << _name << "!" << std::endl;
+	displayStatus();
+}
 
 /* ******************************** getters ********************************* */
 
@@ -85,10 +97,10 @@ const int&			ClapTrap::getAttackDamage() const
 
 void	ClapTrap::setAttackDamage( int damage )
 {
-	if (damage >= 0)
+	if (damage > 0)
 		_attackDamage = damage;
 	else
-		std::cerr << "Error : Cannot set attackDamage : invalid value" << std::endl;
+		_attackDamage = 0;
 }
 
 /* ************************* other public methods ************************** */
@@ -109,7 +121,7 @@ void	ClapTrap::attack( const std::string& target )
 	}
 	std::cout << "ClapTrap " << _name
 		<< " attacks " << target
-		<< " causing " << _attackDamage << " points of damage!"
+		<< " causing " << _attackDamage << " points of damages!"
 		<< std::endl;
 	_energyPoints--;
 	displayStatus();
@@ -118,12 +130,13 @@ void	ClapTrap::attack( const std::string& target )
 void	ClapTrap::takeDamage( unsigned int amount )
 {
 	std::cout << "ClapTrap " << _name << " has taken "
-		  << amount << " damage(s)! " << std::endl;
+		  << amount << " damages! " << std::endl;
 	_hitPoints -= amount;
 	if (_hitPoints <= 0)
 	{
 		_hitPoints = 0;
-		std::cout << _name << " has been destroyed!" << std::endl;
+		std::cout << "ClapTrap " << _name
+			<< " has been killed!" << std::endl;
 		return ;
 	}
 	displayStatus();
@@ -170,11 +183,14 @@ void	ClapTrap::displayStatus() const
 /* *************************** default constructor ************************** */
 
 ClapTrap::ClapTrap() :
-	_name("unamed"),
+	_name("Unamed"),
 	_hitPoints(10),
 	_energyPoints(10),
 	_attackDamage(0)
-{}
+{
+	std::cout << "A naw ClapTrap has been born, but wasn't named.\n"
+		<< "His name has been set to: Unamed." << std::endl;
+}
 
 /* ************************************************************************** */
 /*							non-member functions  							  */
