@@ -18,6 +18,26 @@
 /*								canonical form  							  */
 /* ************************************************************************** */
 
+/* *************************** default constructor ************************** */
+
+ClapTrap::ClapTrap() :
+	_name("Unamed"),
+	_hitPoints(10),
+	_energyPoints(10),
+	_attackDamage(0)
+{
+	std::cout << "A new ClapTrap has been born, but wasn't named.\n"
+		<< "His name has been set to: Unamed." << std::endl;
+}
+
+/* ******************************* destructor ****************************** */
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap object named " << _name
+		<< " has been destroyed." << std::endl;
+}
+
 /* ***************************** copy constructor *************************** */
 
 ClapTrap::ClapTrap( const ClapTrap& other ) :
@@ -30,14 +50,6 @@ ClapTrap::ClapTrap( const ClapTrap& other ) :
 		<< " has just been born and is a copy of "
 		<< other.getName() << "!" << std::endl;
 	displayStatus();
-}
-
-/* ******************************* destructor ****************************** */
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "ClapTrap object named " << _name
-		<< " has been destroyed." << std::endl;
 }
 
 /* ********************** copy assignment operator ************************** */
@@ -179,18 +191,6 @@ void	ClapTrap::displayStatus() const
 /* ************************************************************************** */
 /*								private methods  							  */
 /* ************************************************************************** */
-
-/* *************************** default constructor ************************** */
-
-ClapTrap::ClapTrap() :
-	_name("Unamed"),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0)
-{
-	std::cout << "A new ClapTrap has been born, but wasn't named.\n"
-		<< "His name has been set to: Unamed." << std::endl;
-}
 
 /* ************************************************************************** */
 /*							non-member functions  							  */

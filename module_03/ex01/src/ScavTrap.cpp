@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,37 +12,50 @@
 
 #include <iostream>
 #include <string>
-#include "../include/ClapTrap.hpp"
+#include "../include/ScavTrap.hpp"
 
 /* ************************************************************************** */
 /*								canonical form  							  */
 /* ************************************************************************** */
 
+/* *************************** default constructor ************************** */
+
+ScavTrap::ScavTrap()
+{
+	_name = "Unamed";
+	_hitPoints = 10;
+	_energyPoints = 10;
+	_attackDamage = 0;
+	std::cout << "A new ScavTrap has been born, but wasn't named.\n"
+		<< "His name has been set to: Unamed." << std::endl;
+}
+
+/* ******************************* destructor ****************************** */
+
+ScavTrap::~ScavTrap()
+{
+	std::cout << "ScavTrap object named " << _name
+		<< " has been destroyed." << std::endl;
+}
+
 /* ***************************** copy constructor *************************** */
 
-ClapTrap::ClapTrap( const ClapTrap& other ) :
-	_name(other._name),
-	_hitPoints(other._hitPoints),
-	_energyPoints(other._energyPoints),
-	_attackDamage(other._attackDamage)
+ScavTrap::ScavTrap( const ScavTrap& other ) :
+	ClapTrap(other)
 {
-	std::cout << "ClapTrap " << _name
+	_name = other._name;
+	_hitPoints = other._hitPoints;
+	_energyPoints = other._energyPoints;
+	_attackDamage = other._attackDamage;
+	std::cout << "ScavTrap " << _name
 		<< " has just been born and is a copy of "
 		<< other.getName() << "!" << std::endl;
 	displayStatus();
 }
 
-/* ******************************* destructor ****************************** */
-
-ClapTrap::~ClapTrap()
-{
-	std::cout << "ClapTrap object named " << _name
-		<< " has been destroyed." << std::endl;
-}
-
 /* ********************** copy assignment operator ************************** */
 
-ClapTrap& ClapTrap::operator=( const ClapTrap& other )
+ScavTrap& ScavTrap::operator=( const ScavTrap& other )
 {
 	if (this != &other)
 	{
@@ -60,66 +73,38 @@ ClapTrap& ClapTrap::operator=( const ClapTrap& other )
 
 /* ******************************* constructors ***************************** */
 
-ClapTrap::ClapTrap( const std::string& name ) :
-	_name(name),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0)
+ScavTrap::ScavTrap( const std::string& name ) :
+	ClapTrap(name)
 {
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 	std::cout << "Here comes a new challenger: "
-		<< "ClapTrap " << _name << "!" << std::endl;
+		<< "ScavTrap " << _name << "!" << std::endl;
 	displayStatus();
 }
 
 /* ******************************** getters ********************************* */
 
-const std::string&	ClapTrap::getName() const
-{
-	return(_name);
-}
-
-const int&			ClapTrap::getHitPoints() const
-{
-	return (_hitPoints);
-}
-
-const int&			ClapTrap::getEnergyPoints() const
-{
-	return (_energyPoints);
-}
-
-const int&			ClapTrap::getAttackDamage() const
-{
-	return (_attackDamage);
-}
-
 /* ******************************** setters ******************************** */
-
-void	ClapTrap::setAttackDamage( int damage )
-{
-	if (damage > 0)
-		_attackDamage = damage;
-	else
-		_attackDamage = 0;
-}
 
 /* ************************* other public methods ************************** */
 
-void	ClapTrap::attack( const std::string& target )
+void	ScavTrap::attack( const std::string& target )
 {
 	if (_hitPoints == 0)
 	{
-		std::cout << "ClapTrap " << _name
+		std::cout << "ScavTrap " << _name
 			<< " is destroyed and cannot attack." << std::endl;
 		return ;
 	}
 	if (_energyPoints == 0)
 	{
-		std::cout << "ClapTrap " << _name
+		std::cout << "ScavTrap " << _name
 			<< " is too exhausted to attack." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << _name
+	std::cout << "ScavTrap " << _name
 		<< " attacks " << target
 		<< " causing " << _attackDamage << " points of damages!"
 		<< std::endl;
@@ -127,70 +112,15 @@ void	ClapTrap::attack( const std::string& target )
 	displayStatus();
 }
 
-void	ClapTrap::takeDamage( unsigned int amount )
+void ScavTrap::guardGate()
 {
-	std::cout << "ClapTrap " << _name << " has taken "
-		  << amount << " damages! " << std::endl;
-	_hitPoints -= amount;
-	if (_hitPoints <= 0)
-	{
-		_hitPoints = 0;
-		std::cout << "ClapTrap " << _name
-			<< " has been killed!" << std::endl;
-		return ;
-	}
-	displayStatus();
-}
-
-void	ClapTrap::beRepaired( unsigned int amount )
-{
-	if (_hitPoints == 0)
-	{
-		std::cout << "ClapTrap " << _name
-			<< " is destroyed and cannot be repaired." << std::endl;
-		return ;
-	}
-	if (_energyPoints == 0)
-	{
-		std::cout << "ClapTrap " << _name
-			<< " is too exhausted to repair." << std::endl;
-		return ;
-	}
-	if (amount == 0)
-	{
-		std::cerr << "Error: invalid repair amount." << std::endl;
-		return ;
-	}
-	_hitPoints += amount;
-	_energyPoints--;
-	std::cout << "ClapTrap " << _name << " repairs itself and gains "
-	          << amount << " hit points! " << std::endl;
-	displayStatus();
-}
-
-void	ClapTrap::displayStatus() const
-{
-	std::cout << "ClapTrap " << _name << " has "
-		<< "HP: " << _hitPoints
-		<< " | EP: "<< _energyPoints
-		<< " | AD: " << _attackDamage << std::endl;
+	std::cout << "ScavTrap " << _name
+		<< " is now in Gate keeper mode." << std::endl;
 }
 
 /* ************************************************************************** */
 /*								private methods  							  */
 /* ************************************************************************** */
-
-/* *************************** default constructor ************************** */
-
-ClapTrap::ClapTrap() :
-	_name("Unamed"),
-	_hitPoints(10),
-	_energyPoints(10),
-	_attackDamage(0)
-{
-	std::cout << "A new ClapTrap has been born, but wasn't named.\n"
-		<< "His name has been set to: Unamed." << std::endl;
-}
 
 /* ************************************************************************** */
 /*							non-member functions  							  */

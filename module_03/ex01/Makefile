@@ -10,13 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := Aaaaand...OPEN!
+NAME    := SerenaMyLove!
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
 
 SRC     :=	$(SRCDIR)/main.cpp \
-			$(SRCDIR)/ClapTrap.cpp
+			$(SRCDIR)/ClapTrap.cpp \
+			$(SRCDIR)/ScavTrap.cpp
 
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
