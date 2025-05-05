@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 21:24:55 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/04 23:21:44 by christophed      ###   ########.fr       */
+/*   Created: 2025/05/04 21:25:17 by christophed       #+#    #+#             */
+/*   Updated: 2025/05/05 00:03:50 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include <iostream>
+#include <string>
+#include "../include/ClapTrap.hpp"
+#include "../include/ScavTrap.hpp"
+#include "../include/FragTrap.hpp"
 
-# include <string>
-# include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+int	main( void )
 {
-	public:
+	FragTrap	gpt("GPT");
 
-		~ScavTrap();
-		ScavTrap( const ScavTrap& other );
-		ScavTrap& operator=( const ScavTrap& other );
-		
-		ScavTrap( const std::string& name );
-		
-		void	attack( const std::string& target );
-		void	guardGate();
+	gpt.attack("DeepSeek");
+	gpt.beRepaired(10);
+	gpt.highFivesGuys();
+	gpt.takeDamage(200);
 
-	private:
-	
-		ScavTrap();
-
-};
-
-# endif
+	return (0);
+}

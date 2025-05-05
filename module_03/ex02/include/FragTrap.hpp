@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 # include <string>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 	public:
 
-		~ScavTrap();
-		ScavTrap( const ScavTrap& other );
-		ScavTrap& operator=( const ScavTrap& other );
+		~FragTrap();
+		FragTrap( const FragTrap& other );
+		FragTrap& operator=( const FragTrap& other );
 		
-		ScavTrap( const std::string& name );
+		FragTrap( const std::string& name );
 		
 		void	attack( const std::string& target );
-		void	guardGate();
+		void	highFivesGuys(void);
 
 	private:
 	
-		ScavTrap();
+		FragTrap();
 
 };
 

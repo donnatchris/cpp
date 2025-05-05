@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,28 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <string>
-# include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ClapTrap
 {
 	public:
 
-		~ScavTrap();
-		ScavTrap( const ScavTrap& other );
-		ScavTrap& operator=( const ScavTrap& other );
+		ClapTrap();
+		virtual ~ClapTrap();
+		ClapTrap( const ClapTrap& other );
+		ClapTrap& operator=( const ClapTrap& other );
 		
-		ScavTrap( const std::string& name );
+		ClapTrap( const std::string& name );
 		
-		void	attack( const std::string& target );
-		void	guardGate();
+		virtual void	attack( const std::string& target );
+		void			takeDamage( unsigned int amount );
+		void			beRepaired( unsigned int amount );
 
-	private:
+		const std::string&	getName() const;
+		const int&			getHitPoints() const;
+		const int&			getEnergyPoints() const;
+		const int&			getAttackDamage() const;
+		void				setAttackDamage( int damage );
+
+		void	displayStatus() const;
+
+	protected:
 	
-		ScavTrap();
+		std::string	_name;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
 
 };
 
