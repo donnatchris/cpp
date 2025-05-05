@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := SerenaMyLove!
+NAME    := RepetitiveWork
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj

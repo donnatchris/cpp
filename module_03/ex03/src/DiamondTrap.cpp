@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <iostream>
 #include <string>
-#include "../include/ScavTrap.hpp"
+#include "../include/DiamondTrap.hpp"
 
 /* ************************************************************************** */
 /*								canonical form  							  */
@@ -20,41 +20,43 @@
 
 /* *************************** default constructor ************************** */
 
-ScavTrap::ScavTrap()
+DiamondTrap::DiamondTrap()
 {
 	_name = "Unamed";
-	_hitPoints = 10;
+	_hitPoints = 100;
 	_energyPoints = 10;
-	_attackDamage = 0;
-	std::cout << "A new ScavTrap has been born, but wasn't named.\n"
+	_attackDamage = 30;
+	std::cout << "A new DiamondTrap has been born, but wasn't named.\n"
 		<< "His name has been set to: Unamed." << std::endl;
 }
 
 /* ******************************* destructor ****************************** */
 
-ScavTrap::~ScavTrap()
+DiamondTrap::~DiamondTrap()
 {
-	std::cout << "ScavTrap object named " << _name
+	std::cout << "DiamondTrap object named " << _name
 		<< " has been destroyed." << std::endl;
 }
 
 /* ***************************** copy constructor *************************** */
 
-ScavTrap::ScavTrap( const ScavTrap& other ) :
-	ClapTrap(other)
+DiamondTrap::DiamondTrap( const DiamondTrap& other ) :
+	ClapTrap(other),
+	ScavTrap(other),
+	FragTrap(other)
 {
 	_name = other._name;
 	_hitPoints = other._hitPoints;
 	_energyPoints = other._energyPoints;
 	_attackDamage = other._attackDamage;
-	std::cout << "ScavTrap " << _name
+	std::cout << "DiamondTrap " << _name
 		<< " has just been born and is a copy of "
 		<< other.getName() << "!" << std::endl;
 }
 
 /* ********************** copy assignment operator ************************** */
 
-ScavTrap& ScavTrap::operator=( const ScavTrap& other )
+DiamondTrap& DiamondTrap::operator=( const DiamondTrap& other )
 {
 	if (this != &other)
 	{
@@ -72,14 +74,17 @@ ScavTrap& ScavTrap::operator=( const ScavTrap& other )
 
 /* ******************************* constructors ***************************** */
 
-ScavTrap::ScavTrap( const std::string& name ) :
-	ClapTrap(name)
+DiamondTrap::DiamondTrap( const std::string& name ) :
+	ClapTrap(name + "_clap_name"),
+	ScavTrap(name),
+	FragTrap(name),
+	_name(name)
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "Here comes a new challenger: "
-		<< "ScavTrap " << _name << "!" << std::endl;
+		<< "DiamondTrap " << _name << "!" << std::endl;
 }
 
 /* ******************************** getters ********************************* */
@@ -88,21 +93,21 @@ ScavTrap::ScavTrap( const std::string& name ) :
 
 /* ************************* other public methods ************************** */
 
-void	ScavTrap::attack( const std::string& target )
+void	DiamondTrap::attack( const std::string& target )
 {
 	if (_hitPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name
+		std::cout << "DiamondTrap " << _name
 			<< " is destroyed and cannot attack." << std::endl;
 		return ;
 	}
 	if (_energyPoints == 0)
 	{
-		std::cout << "ScavTrap " << _name
+		std::cout << "DiamondTrap " << _name
 			<< " is too exhausted to attack." << std::endl;
 		return ;
 	}
-	std::cout << "ScavTrap " << _name
+	std::cout << "DiamondTrap " << _name
 		<< " attacks " << target
 		<< " causing " << _attackDamage << " points of damages!"
 		<< std::endl;
@@ -110,10 +115,10 @@ void	ScavTrap::attack( const std::string& target )
 	displayStatus();
 }
 
-void ScavTrap::guardGate()
+void	DiamondTrap::whoAmI()
 {
-	std::cout << "ScavTrap " << _name
-		<< " is now in Gate keeper mode." << std::endl;
+	std::cout << "DiamondTrap Hello, I am " << _name
+	<< " and my ClapTrap name is " <<  ClapTrap::getName() << std::endl;
 }
 
 /* ************************************************************************** */

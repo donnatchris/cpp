@@ -49,7 +49,6 @@ ClapTrap::ClapTrap( const ClapTrap& other ) :
 	std::cout << "ClapTrap " << _name
 		<< " has just been born and is a copy of "
 		<< other.getName() << "!" << std::endl;
-	displayStatus();
 }
 
 /* ********************** copy assignment operator ************************** */
@@ -80,7 +79,6 @@ ClapTrap::ClapTrap( const std::string& name ) :
 {
 	std::cout << "Here comes a new challenger: "
 		<< "ClapTrap " << _name << "!" << std::endl;
-	displayStatus();
 }
 
 /* ******************************** getters ********************************* */

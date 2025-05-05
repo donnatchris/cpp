@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := Aaaaand...OPEN!
+NAME    := Aaaaand...OPEN
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
