@@ -3,23 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+         #
+#    By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/06 13:03:38 by chdonnat         ###   ########.fr        #
+#    Updated: 2025/05/06 18:23:24 by christophed      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := Interface&Recap
+NAME    := InterfaceAndRecap
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
 
 SRC     :=	$(SRCDIR)/main.cpp \
-			$(SRCDIR)/AAnimal.cpp \
-			$(SRCDIR)/Dog.cpp \
-			$(SRCDIR)/Cat.cpp \
-			$(SRCDIR)/Brain.cpp
+			$(SRCDIR)/AMateria.cpp \
+			$(SRCDIR)/Character.cpp \
+			$(SRCDIR)/Cure.cpp \
+			$(SRCDIR)/Ice.cpp \
+			$(SRCDIR)/MateriaSource.cpp
 			
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 

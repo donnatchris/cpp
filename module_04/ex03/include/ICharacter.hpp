@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:35:21 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/06 14:40:01 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:01:58 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define ICHARACTER_HPP
 
 # include <string>
-# include "../include/AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

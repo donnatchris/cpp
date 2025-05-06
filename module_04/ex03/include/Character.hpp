@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:38:19 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/06 16:39:45 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:07:08 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string>
 # include <iostream>
 # include "../include/ICharacter.hpp"
+# include "../include/AMateria.hpp"
 
 # define INVENTORY_SIZE 4
 

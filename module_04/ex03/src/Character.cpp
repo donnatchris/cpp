@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:42:02 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/06 16:10:07 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:21:16 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,6 @@ void	Character::use(int idx, ICharacter& target)
 {
 	if (idx < 0 || idx >= INVENTORY_SIZE || !_inventory[idx])
 		return ;
-	
-	std::cout << _name << " " << std::flush;
 	_inventory[idx]->use(target);
 }
 

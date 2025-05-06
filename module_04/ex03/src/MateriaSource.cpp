@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:37:37 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/06 17:10:44 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:20:56 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ MateriaSource& MateriaSource::operator=( const MateriaSource& other )
 	}
 	return (*this);
 }
-
 /* ************************************************************************** */
 /*								public methods  							  */
 /* ************************************************************************** */

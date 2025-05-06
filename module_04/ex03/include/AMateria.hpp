@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:09:00 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/06 16:17:11 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:02:08 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define AMATERIA_HPP
 
 # include <string>
-# include "../include/ICharacter.hpp"
 
+class ICharacter;
 class AMateria
 {
 	public:
