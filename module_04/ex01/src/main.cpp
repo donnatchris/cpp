@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:38:02 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/06 11:17:56 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/06 11:20:41 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include "../include/Animal.hpp"
 #include "../include/Cat.hpp"
 #include "../include/Dog.hpp"
-#include "../include/WrongAnimal.hpp"
-#include "../include/WrongCat.hpp"
 
 void	exit_error()
 {

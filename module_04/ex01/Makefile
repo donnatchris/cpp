@@ -6,7 +6,7 @@
 #    By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/06 10:47:13 by chdonnat         ###   ########.fr        #
+#    Updated: 2025/05/06 11:20:45 by chdonnat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ SRC     :=	$(SRCDIR)/main.cpp \
 			$(SRCDIR)/Animal.cpp \
 			$(SRCDIR)/Dog.cpp \
 			$(SRCDIR)/Cat.cpp \
-			$(SRCDIR)/WrongAnimal.cpp \
-			$(SRCDIR)/WrongCat.cpp \
 			$(SRCDIR)/Brain.cpp
 			
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
