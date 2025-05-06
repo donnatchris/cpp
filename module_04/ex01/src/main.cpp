@@ -6,43 +6,56 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:38:02 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/05 16:58:02 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/06 11:17:56 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <cstdlib>
 #include "../include/Animal.hpp"
 #include "../include/Cat.hpp"
 #include "../include/Dog.hpp"
 #include "../include/WrongAnimal.hpp"
 #include "../include/WrongCat.hpp"
 
-int main()
+void	exit_error()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+	std::cerr << "Error : 1 arguemnt needed (number of animals)" << std::endl;
+	exit(1);
+}
 
-    delete meta;
-    delete j;
-    delete i;
-    
-    std::cout << "\nNOW WITH WRONG ANIMAL\n" << std::endl;
-    
-    const WrongAnimal* meta2 = new WrongAnimal();
-    const WrongAnimal* i2 = new WrongCat();
-    std::cout << i2->getType() << " " << std::endl;
-    i2->makeSound();
-    meta2->makeSound();
+int main(int ac, char **av)
+{
+	if (ac != 2)
+		exit_error();
 
-    delete meta2;
-    delete i2;
+	std::string arg = av[1];
+	int	size;
+	std::istringstream(arg) >> size;
+	
+	Animal* animal_array[size];
+	for (int i = 0; i < size; i++)
+	{
+		if (i < size / 2)
+			animal_array[i] = new Dog;
+		else
+			animal_array[i] = new Cat;
+	}
+	
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << animal_array[i]->getType() << std::endl;
+		animal_array[i]->makeSound();
+		if (Dog* dog = dynamic_cast<Dog*>(animal_array[i]))
+			std::cout << dog->getBrain()->getBrainIdea(i) << std::endl;
+		if (Cat* cat = dynamic_cast<Cat*>(animal_array[i]))
+			std::cout << cat->getBrain()->getBrainIdea(i) << std::endl;
+	}
 
-    return 0;
+	for (int i = 0; i < size; i++)
+		delete animal_array[i];
+	
+	return 0;
 }
