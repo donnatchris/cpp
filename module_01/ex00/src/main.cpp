@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 10:26:48 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 14:54:12 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/07 20:50:25 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ int main( void )
 	Zombie	*heap_z[5];
 	for (int i = 0; i < 5; i++)
 		heap_z[i] = newZombie(heap_names[i]);
-	std::cout << std::endl;
-	for (int i = 0; i < 5; i++)
-		heap_z[i].announce();
 	std::cout << std::endl;
 
 

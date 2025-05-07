@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 09:50:10 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 10:55:33 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/07 20:49:36 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Zombie.hpp"
-
 
 /* ************************************************************************** */
 /*								public methods  							  */

@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:20:42 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/03 11:44:05 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/07 21:25:13 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ void	exit_error(int mode)
 
 bool is_directory(const char *path)
 {
-	struct stat s;
+	struct stat file_stat;
 
-	if (stat(path, &s) == 0)
-		return (S_ISDIR(s.st_mode));
+	if (stat(path, &file_stat) == 0)
+		return (S_ISDIR(file_stat.st_mode));
 	return (false);
 }
 
@@ -55,7 +55,7 @@ int	main(int ac, char **av)
 {
 	if (ac != 4)
 		exit_error(0);
-	
+
 	std::ifstream	readStream(av[1]);
 	if (!readStream.is_open() || !readStream.good() || is_directory(av[1]))
 	{

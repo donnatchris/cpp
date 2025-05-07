@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 12:59:30 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/02 18:44:33 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/07 20:54:28 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ int main(int ac, char **av)
 	
 	Zombie  	*horde;
 	int     	number;
+	
 	std::string	nb(av[1]);
-
 	std::stringstream   ss(nb);
 	ss >> number;
 	if (number < 1)
