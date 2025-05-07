@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:48:43 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/01 09:49:58 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/07 11:05:54 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 #include <limits>
 
 PhoneBook::PhoneBook() :
-	_nb_of_entry(0) {
-}
+	_nb_of_entry(0)
+{}
 
-PhoneBook::~PhoneBook() {
-}
+PhoneBook::~PhoneBook()
+{}
 
-void    PhoneBook::addContactInPhoneBook() {
+void    PhoneBook::addContactInPhoneBook()
+{
 	int 	actual_entry(_nb_of_entry % 8);
 	Contact	contact;
 
-	if (_nb_of_entry >= 8) {
+	if (_nb_of_entry >= 8)
 		_contacts[actual_entry] = contact;
-	}
 	_contacts[actual_entry].createContact();
 	_nb_of_entry++;
 }
@@ -48,7 +48,8 @@ void PhoneBook::printArrayLine(const Contact contact, int index)
 	std::cout << formatField(contact.getPhoneNumber()) << " |" << std::endl;
 }
 
-void    PhoneBook::searchContactInPhoneBook() {
+void    PhoneBook::searchContactInPhoneBook()
+{
 	int	i(0);
 	int	input(0);
 
@@ -65,9 +66,10 @@ void    PhoneBook::searchContactInPhoneBook() {
 	std::cout << "Enter the index of the contact you want to display :" << std::endl;
 	while (input < 1 || input > 8 || input > _nb_of_entry) {
 		std::cin >> input;
-		if (std::cin.eof()) {
+		if (std::cin.eof())
+		{
 			std::cout << BLUE "EOF detected. Exiting gracefully." RESET << std::endl;
-			return ;
+			exit(1) ;
 		}
 		std::cin.clear();
     	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
