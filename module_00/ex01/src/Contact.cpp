@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 15:02:55 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/07 11:04:07 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/09 08:27:39 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include "../include/Contact.hpp"
 
 Contact::Contact() :
@@ -59,7 +60,7 @@ std::string	Contact::storeInfo(std::string msg)
 		if (std::cin.eof())
 		{
 			std::cout << BLUE "EOF detected. Exiting gracefully." RESET << std::endl;
-			exit (0) ;
+			exit(0) ;
 		}
 		if(!input.length())
 			std::cout << RED "Error: entry canot be empty" RESET << std::endl;

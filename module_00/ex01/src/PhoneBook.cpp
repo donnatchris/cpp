@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:48:43 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/07 11:05:54 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/09 08:32:58 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cstdlib>
 #include "../include/PhoneBook.hpp"
 #include <limits>
 
