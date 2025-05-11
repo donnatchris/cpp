@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 09:24:35 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/04 14:30:17 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/11 15:56:46 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,24 +94,17 @@ void Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	float	result;
-
-	result = static_cast<float>(_value) / static_cast<float>(1 << _fract);
-	return (result);
+	return (static_cast<float>(_value) / (1 << _fract));
 }
 
 int		Fixed::toInt( void ) const
 {
-	int	result;
-
-	result = _value / (1 << _fract);
-	return (result);
+	return (_value >> _fract);
 }
 
 /* ************************************************************************** */
 /*								private methods  							  */
 /* ************************************************************************** */
-
 
 /* ************************************************************************** */
 /*							non-member functions  							  */

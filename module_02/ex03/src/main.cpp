@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 09:22:43 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/04 21:19:00 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/11 16:04:04 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main( void )
 	Point	a2(0.2f, 0.2f);
 	Point	b2(10.234f, 0);
 	Point	c2(0, 10);
-	Point	p2(4.5f, 3.234f);
+	Point	p2(12.5f, 3.234f);
 	print_result(bsp(a2, b2, c2, p2));
 
 	return (0);
