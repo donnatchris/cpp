@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:20:42 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/09 11:22:22 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/11 10:22:03 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	exit_error(int mode)
 		std::cerr << "cannot open file.";
 	else if (mode == 2)
 		std::cerr << "failed to create replace file.";
+	else if (mode == 3)
+		std::cerr << "the string to replace cannot be empty.";
 	std::cerr << std::endl;
 	exit(1);
 }
@@ -56,6 +58,9 @@ int	main(int ac, char **av)
 {
 	if (ac != 4)
 		exit_error(0);
+
+	if (std::string(av[2]).empty())
+		exit_error(3);
 
 	std::ifstream	readStream(av[1]);
 	if (!readStream.is_open() || !readStream.good() || is_directory(av[1]))
