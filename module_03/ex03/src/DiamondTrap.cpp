@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 21:25:08 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/05 00:05:29 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/12 13:20:55 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,29 +95,12 @@ DiamondTrap::DiamondTrap( const std::string& name ) :
 
 void	DiamondTrap::attack( const std::string& target )
 {
-	if (_hitPoints == 0)
-	{
-		std::cout << "DiamondTrap " << _name
-			<< " is destroyed and cannot attack." << std::endl;
-		return ;
-	}
-	if (_energyPoints == 0)
-	{
-		std::cout << "DiamondTrap " << _name
-			<< " is too exhausted to attack." << std::endl;
-		return ;
-	}
-	std::cout << "DiamondTrap " << _name
-		<< " attacks " << target
-		<< " causing " << _attackDamage << " points of damages!"
-		<< std::endl;
-	_energyPoints--;
-	displayStatus();
+	ScavTrap::attack(target);
 }
 
 void	DiamondTrap::whoAmI()
 {
-	std::cout << "DiamondTrap Hello, I am " << _name
+	std::cout << "DiamondTrap Hello, I am " << this->_name
 	<< " and my ClapTrap name is " <<  ClapTrap::getName() << std::endl;
 }
 
