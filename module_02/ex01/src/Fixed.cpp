@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 09:24:35 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/11 15:56:46 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/12 08:52:35 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ Fixed::Fixed() :
 
 /* ***************************** copy constructor *************************** */
 
-Fixed::Fixed( const Fixed& other ) :
-	_value(other._value)
+Fixed::Fixed( const Fixed& other )
 {
 	std::cout << "Copy constructor called" << std::endl;
+
+	*this = other;
 }
 
 /* ******************************* destructor ****************************** */
