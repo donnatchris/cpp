@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 16:38:02 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/06 11:20:41 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/13 08:46:02 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	exit_error()
 {
-	std::cerr << "Error : 1 arguemnt needed (number of animals)" << std::endl;
+	std::cerr << "Error : 1 arguemnt needed (number of animals, max 100)" << std::endl;
 	exit(1);
 }
 
@@ -32,6 +32,9 @@ int main(int ac, char **av)
 	std::string arg = av[1];
 	int	size;
 	std::istringstream(arg) >> size;
+
+	if (size > 100)
+		exit_error();
 	
 	Animal* animal_array[size];
 	for (int i = 0; i < size; i++)
