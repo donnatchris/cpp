@@ -6,11 +6,11 @@
 #    By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/16 12:47:12 by chdonnat         ###   ########.fr        #
+#    Updated: 2025/05/16 13:17:55 by chdonnat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := Form_up_maggots
+NAME    := At_least
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj

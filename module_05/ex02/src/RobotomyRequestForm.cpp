@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:51:42 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 12:56:11 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:29:21 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 /* *************************** default constructor ************************** */
 
 RobotomyRequestForm::RobotomyRequestForm():
-	AForm("unamed", 72, 45),
+	AForm("robotomy request form", 72, 45),
 	_target("unamed")
 {}
 
@@ -53,8 +53,8 @@ RobotomyRequestForm& RobotomyRequestForm::operator=( const RobotomyRequestForm& 
 
 /* ******************************* constructors ***************************** */
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string& name, const std::string& target):
-	AForm(name, 72, 45),
+RobotomyRequestForm::RobotomyRequestForm(const std::string& target):
+	AForm("robotomy request form", 72, 45),
 	_target(target)
 {}
 

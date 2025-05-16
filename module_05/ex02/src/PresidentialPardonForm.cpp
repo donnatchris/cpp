@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:33:53 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 12:55:59 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:27:40 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 /* *************************** default constructor ************************** */
 
 PresidentialPardonForm::PresidentialPardonForm():
-	AForm("unamed", 25, 5),
+	AForm("presidential pardon form", 25, 5),
 	_target("unamed")
 {}
 
@@ -53,8 +53,8 @@ PresidentialPardonForm& PresidentialPardonForm::operator=( const PresidentialPar
 
 /* ******************************* constructors ***************************** */
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string& name, const std::string& target):
-	AForm(name, 25, 5),
+PresidentialPardonForm::PresidentialPardonForm(const std::string& target):
+	AForm("presidential pardon form", 25, 5),
 	_target(target)
 {}
 

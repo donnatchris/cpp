@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:16:35 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 12:53:48 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:28:03 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm( const RobotomyRequestForm& other );
 		RobotomyRequestForm& operator=( const RobotomyRequestForm& other );
 
-		RobotomyRequestForm(const std::string& name, const std::string& target);
+		RobotomyRequestForm(const std::string& target);
 
 		void	execute(Bureaucrat const & executor) const;
 
