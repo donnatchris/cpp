@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 14:47:19 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 13:03:02 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 16:52:14 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int main()
 	std::cout << charlie << std::endl;
 
 	// Create forms with target
-	ShrubberyCreationForm shrubForm("Backyard", "Nice_tree");
-	RobotomyRequestForm robotomyForm("Marvin", "Jasmine");
-	PresidentialPardonForm pardonForm("Chirac", "Baladur");
+	ShrubberyCreationForm shrubForm("Nice_tree");
+	RobotomyRequestForm robotomyForm("Jasmine");
+	PresidentialPardonForm pardonForm("Baladur");
 
 	std::cout << "\n--- FORMS CREATED ---" << std::endl;
 	std::cout << shrubForm << std::endl;
