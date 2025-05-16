@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 12:53:43 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/15 16:18:54 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 08:38:24 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,30 @@ void Bureaucrat::decrementGrade()
 
 /* ************************* other public methods ************************** */
 
-void Bureaucrat::signForm() const
+void Bureaucrat::signForm(Form& form) const
 {
-	try ()
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e)
+    {
+		std::cerr << _name << " couldn't sign " << form.getName()
+			<< " because " << e.what() << std::endl;
+	}
+}
+
+/* ******************************** exceptions ****************************** */
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return ("Grade too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return ("Grade too low!");
 }
 
 /* ************************************************************************** */
@@ -98,18 +119,6 @@ void Bureaucrat::signForm() const
 /* ************************************************************************** */
 /*							non-member functions  							  */
 /* ************************************************************************** */
-
-/* ******************************** exceptions ****************************** */
-
-const char* GradeTooHighException::what() const throw()
-{
-	return ("Grade too high!");
-}
-
-const char* GradeTooLowException::what() const throw()
-{
-	return ("Grade too low!");
-}
 
 /* ******************************** overloads ******************************* */
 

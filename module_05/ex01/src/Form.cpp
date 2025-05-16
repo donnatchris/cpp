@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:37:48 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/15 16:13:34 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 08:41:41 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 Form::Form():
 	_name("unamed"),
+	_signed(false),
 	_gradeToSign(1),
-	_gradeToExecute(1),
-	_signed(false)
+	_gradeToExecute(1)
 {}
 
 /* ******************************* destructor ****************************** */
@@ -34,9 +34,9 @@ Form::~Form()
 
 Form::Form( const Form& other ):
 	_name(other._name),
+	_signed(other._signed),
 	_gradeToSign(other._gradeToSign),
-	_gradeToExecute(other._gradeToExecute),
-	_signed(other._signed)
+	_gradeToExecute(other._gradeToExecute)
 {
 	if (_gradeToSign < 1 || _gradeToExecute < 1)
 		throw GradeTooHighException();
@@ -63,9 +63,9 @@ Form& Form::operator=( const Form& other )
 
 Form::Form(const std::string& name, int gradeToSign, int gradeToExecute):
 	_name(name),
+	_signed(false),
 	_gradeToSign(gradeToSign),
-	_gradeToExecute(gradeToExecute),
-	_signed(false)
+	_gradeToExecute(gradeToExecute)
 {
 	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw GradeTooHighException();
@@ -103,6 +103,18 @@ void Form::beSigned(const Bureaucrat& b)
 	_signed = true;
 }
 
+/* ******************************** exceptions ****************************** */
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+	return "Form: Grade too high!";
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+	return "Form: Grade too low!";
+}
+
 /* ************************* other public methods ************************** */
 
 /* ************************************************************************** */
@@ -112,18 +124,6 @@ void Form::beSigned(const Bureaucrat& b)
 /* ************************************************************************** */
 /*							non-member functions  							  */
 /* ************************************************************************** */
-
-/* ******************************** exceptions ****************************** */
-
-const char* GradeTooHighException::what() const throw()
-{
-	return "Form: Grade too high!";
-}
-
-const char* GradeTooLowException::what() const throw()
-{
-	return "Form: Grade too low!";
-}
 
 /* ******************************** overloads ******************************* */
 

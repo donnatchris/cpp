@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 12:15:25 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/15 16:19:17 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 08:36:10 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include "../include/Form.hpp"
 
 class	Form;
 
@@ -34,27 +35,28 @@ class   Bureaucrat
 		int					getGrade() const;
 		void				incrementGrade();
 		void				decrementGrade();
-		void				signForm() const;
+		void				signForm(Form& form) const;
+
+
+		class	GradeTooHighException : public std::exception
+		{
+			public:
+
+				virtual const char* what() const throw();
+		};
+
+		class	GradeTooLowException : public std::exception
+		{
+			public:
+
+				virtual const char* what() const throw();
+		};
 
 	private:
 
 		const std::string 	_name;
 		int					_grade;
 
-};
-
-class	GradeTooHighException : public std::exception
-{
-	public:
-
-		virtual const char* what() const throw();
-};
-
-class	GradeTooLowException : public std::exception
-{
-	public:
-
-		virtual const char* what() const throw();
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

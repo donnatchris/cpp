@@ -6,7 +6,7 @@
 /*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:16:35 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/15 16:09:04 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/16 08:37:13 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ class Form
 		int					getGradeToExecute() const;
 		
 		void				beSigned(const Bureaucrat& b);
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 		
 	private:
 
@@ -45,18 +57,6 @@ class Form
 		const int			_gradeToSign;
 		const int			_gradeToExecute;
 
-};
-
-class GradeTooHighException : public std::exception
-{
-	public:
-		virtual const char* what() const throw();
-};
-
-class GradeTooLowException : public std::exception
-{
-	public:
-		virtual const char* what() const throw();
 };
 
 std::ostream& operator<<(std::ostream& os, const Form& form);
