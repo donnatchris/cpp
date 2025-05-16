@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:33:53 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 17:40:45 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/16 17:39:23 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string& target):
 	_target(target)
 {}
 
+/* ******************************** getters ********************************* */
+
+/* ******************************** setters ********************************* */
+
+/* ******************************** exceptions ****************************** */
+
 /* ************************* other public methods *************************** */
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
@@ -65,3 +71,16 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const
 	testExecution(executor);
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox."<< std::endl;
 }
+
+/* ************************************************************************** */
+/*								private methods  							  */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*							non-member functions  							  */
+/* ************************************************************************** */
+
+/* ******************************** overloads ******************************* */
+
+/* *********************** other non-member functions *********************** */
+

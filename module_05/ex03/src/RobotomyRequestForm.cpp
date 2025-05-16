@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 11:51:42 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 17:41:28 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/16 13:29:21 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string& target):
 	_target(target)
 {}
 
+/* ******************************** getters ********************************* */
+
+/* ******************************** setters ********************************* */
+
+/* ******************************** exceptions ****************************** */
+
 /* ************************* other public methods *************************** */
 
 void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
@@ -76,3 +82,16 @@ void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
 	else
 		std::cout << _target << " has been robotomized successfuly." << std::endl;
 }
+
+/* ************************************************************************** */
+/*								private methods  							  */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*							non-member functions  							  */
+/* ************************************************************************** */
+
+/* ******************************** overloads ******************************* */
+
+/* *********************** other non-member functions *********************** */
+

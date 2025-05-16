@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:37:48 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 17:41:16 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/16 11:37:32 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,9 @@ void	AForm::testExecution(Bureaucrat const & executor) const
 		throw AForm::GradeTooLowException();
 }
 
+/* ************************************************************************** */
+/*								private methods  							  */
+/* ************************************************************************** */
 
 /* ************************************************************************** */
 /*							non-member functions  							  */
@@ -148,3 +151,6 @@ std::ostream& operator<<(std::ostream& os, const AForm& f)
 		os << ", is not signed.";
 	return (os);
 }
+
+/* *********************** other non-member functions *********************** */
+
