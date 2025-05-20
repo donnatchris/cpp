@@ -73,6 +73,7 @@
 		"execution": "cpp",
 		"queue": "cpp",
 		"stack": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"list": "cpp"
 	}
 }
