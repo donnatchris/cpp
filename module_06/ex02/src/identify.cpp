@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   identify.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 09:06:41 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/19 09:33:00 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/20 09:42:24 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,21 @@ void identify(Base & p)
 		std::cout << "Object is of type A." << std::endl;
 		(void)a;
 		return;
-	} catch (std::bad_cast&) {}
+	} catch (...) {}
 
 	try {
 		B& b = dynamic_cast<B&>(p);
 		std::cout << "Object is of type B." << std::endl;
 		(void)b;
 		return;
-	} catch (std::bad_cast&) {}
+	} catch (...) {}
 
 	try {
 		C& c = dynamic_cast<C&>(p);
 		std::cout << "Object is of type C." << std::endl;
 		(void)c;
 		return;
-	} catch (std::bad_cast&) {}
+	} catch (...) {}
 
 	std::cout << "Unknown type." << std::endl;
 }
