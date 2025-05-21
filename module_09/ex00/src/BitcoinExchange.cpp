@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:25:10 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/21 18:07:06 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/21 18:13:09 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,6 @@ BitcoinExchange& BitcoinExchange::operator=( const BitcoinExchange& other )
 /*								public methods  							  */
 /* ************************************************************************** */
 
-/* ******************************* constructors ***************************** */
-
-/* ******************************** getters ********************************* */
-
-/* ******************************** setters ********************************* */
-
 /* ******************************** exceptions ****************************** */
 
 const char* BitcoinExchange::CsvErrorException::what() const throw()
@@ -97,47 +91,6 @@ void BitcoinExchange::printData() const
 			<< std::fixed << std::setprecision(2)
 			<< it->second << std::endl;
 	}
-}
-
-void BitcoinExchange::printError(const std::string & message) const
-{
-	std::cout << "Error: " << message << std::endl;
-}
-
-void BitcoinExchange::printBadInput(const std::string & line) const
-{
-	std::cerr << "Error: bad input => " << line << std::endl;
-}
-
-bool BitcoinExchange::isValidAmount(const std::string & amount) const
-{
-	if (amount.empty()) {
-		printError("empty value.");
-		return (false);
-	}
-	float amountf = std::strtod(amount.c_str(), NULL);
-	if (amountf > 1000.0f) {
-		printError("too large a number.");
-		return (false);
-	}
-	if (amountf < 0.0f) {
-		printError("not a positive number.");
-		return (false);
-	}
-	return (true);
-}
-
-std::string trim(const std::string& s)
-{
-	size_t start = 0;
-	while (start < s.length() && std::isspace(s[start]))
-		++start;
-
-	size_t end = s.length();
-	while (end > start && std::isspace(s[end - 1]))
-		--end;
-
-	return s.substr(start, end - start);
 }
 
 void BitcoinExchange::analyse(const char *path) const
@@ -265,12 +218,43 @@ bool BitcoinExchange::isValidDate(const std::string str) const
 	return (isValidYear(year) && isValidMonth(month) && isValidDay(day, month, year));
 }
 
-/* ************************************************************************** */
-/*							non-member functions  							  */
-/* ************************************************************************** */
+void BitcoinExchange::printError(const std::string & message) const
+{
+	std::cout << "Error: " << message << std::endl;
+}
 
+void BitcoinExchange::printBadInput(const std::string & line) const
+{
+	std::cerr << "Error: bad input => " << line << std::endl;
+}
 
-/* ******************************** overloads ******************************* */
+bool BitcoinExchange::isValidAmount(const std::string & amount) const
+{
+	if (amount.empty()) {
+		printError("empty value.");
+		return (false);
+	}
+	float amountf = std::strtod(amount.c_str(), NULL);
+	if (amountf > 1000.0f) {
+		printError("too large a number.");
+		return (false);
+	}
+	if (amountf < 0.0f) {
+		printError("not a positive number.");
+		return (false);
+	}
+	return (true);
+}
 
-/* *********************** other non-member functions *********************** */
+std::string BitcoinExchange::trim(const std::string& s) const
+{
+	size_t start = 0;
+	while (start < s.length() && std::isspace(s[start]))
+		++start;
 
+	size_t end = s.length();
+	while (end > start && std::isspace(s[end - 1]))
+		--end;
+
+	return s.substr(start, end - start);
+}

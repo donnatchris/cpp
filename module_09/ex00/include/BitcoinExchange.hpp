@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:07:51 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/21 18:01:06 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/21 18:11:36 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class BitcoinExchange
 		bool isValidYear(const std::string & year) const;
 		bool isValidMonth(const std::string & month) const;
 		bool isValidDay(const std::string & day, const std::string & month, const std::string & year) const;
+		std::string trim(const std::string& s) const;
 
 	public:
 
