@@ -74,6 +74,7 @@
 		"queue": "cpp",
 		"stack": "cpp",
 		"fstream": "cpp",
-		"list": "cpp"
+		"list": "cpp",
+		"__tree": "cpp"
 	}
 }

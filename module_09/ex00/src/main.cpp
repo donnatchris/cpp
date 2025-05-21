@@ -3,26 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:47:36 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/20 16:19:34 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/21 17:58:13 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstdlib>
-
-void exit_error()
-{
-    std::cerr << "Error: could not open file." << std::endl;
-    exit(1);
-}
+#include "../include/BitcoinExchange.hpp"
 
 int main(int ac, char **av)
 {
-    if (ac != 2)
-        exit_error();
-
+	(void)ac;
+	try
+	{
+		BitcoinExchange be;
+		be.analyse(av[1]);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
     return (0);
 }

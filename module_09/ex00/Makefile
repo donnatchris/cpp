@@ -4,8 +4,7 @@ SRCDIR  := src
 OBJDIR  := obj
 
 SRC     := $(SRCDIR)/main.cpp \
-			(SRCDIR)/BitcoinExchange.cpp
-
+			$(SRCDIR)/BitcoinExchange.cpp
 
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
