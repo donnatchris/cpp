@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:25:10 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/21 18:13:09 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/21 19:08:30 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,17 +203,9 @@ bool BitcoinExchange::isValidDate(const std::string str) const
 	if (str.length() != 10)
 		return (false);
 
-	std::string::const_iterator it1 = std::find(str.begin(), str.end(), '-');
-	if (it1 == str.end())
-		return (false);
-	std::string year(str.begin(), it1);
-
-	std::string::const_iterator it2 = std::find(++it1, str.end(), '-');
-	if (it2 == str.end())
-		return (false);
-	std::string month(it1, it2);
-
-	std::string day(++it2, str.end());
+	std::string year = str.substr(0, 4);
+	std::string month = str.substr(5, 2);
+	std::string day = str.substr(8, 2);
 
 	return (isValidYear(year) && isValidMonth(month) && isValidDay(day, month, year));
 }
