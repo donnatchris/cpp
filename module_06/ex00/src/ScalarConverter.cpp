@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:54:08 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/17 17:39:14 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/22 11:40:52 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,15 @@ ScalarConverter& ScalarConverter::operator=( const ScalarConverter& other )
 void ScalarConverter::convert(std::string & literal)
 {
 	if (ScalarConverter::isChar(literal)) {
-		std::cout << "Is a char" << std::endl;
 		ScalarConverter::fromChar(literal[0]);
 	}
 	else if (ScalarConverter::isInt(literal)) {
-		std::cout << "Is an int" << std::endl;
 		ScalarConverter::fromInt(std::atoi(literal.c_str()));
 	}
 	else if (ScalarConverter::isFloat(literal)) {
-		std::cout << "Is a float" << std::endl;
 		ScalarConverter::fromFloat(std::atof(literal.c_str()));
 	}
 	else if (ScalarConverter::isDouble(literal)) {
-		std::cout << "Is a double" << std::endl;
 		ScalarConverter::fromDouble(std::strtod(literal.c_str(), NULL));
 	}
 	else
@@ -225,16 +221,16 @@ void ScalarConverter::printInf()
 {
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: -inff" << std::endl;
-	std::cout << "double: -inf" << std::endl;
+	std::cout << "float: +inff" << std::endl;
+	std::cout << "double: +inf" << std::endl;
 }
 
 void ScalarConverter::printNegInf()
 {
 	std::cout << "char: impossible" << std::endl;
 	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: inff" << std::endl;
-	std::cout << "double: inf" << std::endl;
+	std::cout << "float: -inff" << std::endl;
+	std::cout << "double: -inf" << std::endl;
 }
 
 void ScalarConverter::fromFloat(float f)
@@ -245,7 +241,10 @@ void ScalarConverter::fromFloat(float f)
 	}
 
 	if (std::isinf(f)) {
-		ScalarConverter::printInf();
+		if (f > 0)
+			ScalarConverter::printInf();
+		else
+			ScalarConverter::printNegInf();
 		return ;
 	}
 
@@ -287,7 +286,10 @@ void ScalarConverter::fromDouble(double d)
 	}
 
 	if (std::isinf(d)) {
-		ScalarConverter::printInf();
+		if (d > 0)
+			ScalarConverter::printInf();
+		else
+			ScalarConverter::printNegInf();
 		return ;
 	}
 

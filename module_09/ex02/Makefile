@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/22 08:57:52 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/22 08:57:52 by chdonnat         ###   ########.fr        #
+#    Created: 2025/05/22 08:57:59 by chdonnat          #+#    #+#              #
+#    Updated: 2025/05/22 08:57:59 by chdonnat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := btc
+NAME    := PmergeMe
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
 
 SRC     := $(SRCDIR)/main.cpp \
-			$(SRCDIR)/BitcoinExchange.cpp
+			$(SRCDIR)/PmergeMe.cpp
 
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 

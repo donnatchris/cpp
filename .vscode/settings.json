@@ -75,6 +75,7 @@
 		"stack": "cpp",
 		"fstream": "cpp",
 		"list": "cpp",
-		"__tree": "cpp"
+		"__tree": "cpp",
+		"*.tpp": "cpp"
 	}
 }

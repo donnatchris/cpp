@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 12:53:43 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/16 17:42:25 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/22 08:14:50 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

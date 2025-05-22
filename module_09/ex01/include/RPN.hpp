@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 19:15:54 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/21 23:42:19 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/22 08:54:49 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#include <cstdlib>
 #include <iostream>
 #include <exception>
 #include <sstream>

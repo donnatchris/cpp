@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:37:18 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/17 17:41:10 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/22 11:34:49 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCALARCONVERTER_HPP
 
 # include <string>
+# include <cstdlib>
 # include <iostream>
 # include <limits>
 # include <iomanip>
@@ -24,6 +25,13 @@ class ScalarConverter
 	public:
 
 		static void convert(std::string & literal);
+
+	private:
+
+		ScalarConverter();
+		~ScalarConverter();
+		ScalarConverter(const ScalarConverter & other);
+		ScalarConverter & operator=(const ScalarConverter & other);
 
 		static bool isChar(std::string & literal);
 		static bool isInt(std::string & literal);
@@ -40,13 +48,6 @@ class ScalarConverter
 		static void fromInt(int i);
 		static void fromFloat(float f);
 		static void fromDouble(double d);
-
-	private:
-
-		ScalarConverter();
-		~ScalarConverter();
-		ScalarConverter(const ScalarConverter & other);
-		ScalarConverter & operator=(const ScalarConverter & other);
 
 };
 

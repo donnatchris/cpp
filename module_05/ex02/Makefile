@@ -6,11 +6,11 @@
 #    By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/16 13:17:55 by chdonnat         ###   ########.fr        #
+#    Updated: 2025/05/22 08:36:19 by chdonnat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME    := At_least
+NAME    := form28B
 INCDIR  := include
 SRCDIR  := src
 OBJDIR  := obj
