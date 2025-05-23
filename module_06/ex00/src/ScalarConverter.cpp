@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/17 10:54:08 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/22 11:40:52 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/23 13:12:32 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,7 +266,12 @@ void ScalarConverter::fromFloat(float f)
 		std::cout << "char: impossible" << std::endl;
 
 	// int conversion
-	std::cout << "int: " << static_cast<int>(f) << std::endl;
+	double df = static_cast<double>(f);
+	if (df > static_cast<double>(std::numeric_limits<int>::max())
+		|| df < static_cast<double>(std::numeric_limits<int>::min()))
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(f) << std::endl;
 
 	// fixing
 	std::cout << std::fixed << std::setprecision(1);
@@ -311,13 +316,21 @@ void ScalarConverter::fromDouble(double d)
 		std::cout << "char: impossible" << std::endl;
 
 	// int conversion
-	std::cout << "int: " << static_cast<int>(d) << std::endl;
+	if (d > static_cast<double>(std::numeric_limits<int>::max())
+		|| d < static_cast<double>(std::numeric_limits<int>::min()))
+		std::cout << "int: impossible" << std::endl;
+	else
+		std::cout << "int: " << static_cast<int>(d) << std::endl;
 
 	// fixing 
 	std::cout << std::fixed << std::setprecision(1);
 
 	// float conversion
-	std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+	if (d > static_cast<double>(std::numeric_limits<float>::max())
+		|| d < - static_cast<double>(std::numeric_limits<float>::max()))
+		std::cout << "float: impossible" << std::endl;
+	else
+		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
 
 	// double conversion
 	std::cout << "double: " << d << std::endl;
