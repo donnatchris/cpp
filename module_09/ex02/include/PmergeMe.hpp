@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 09:13:50 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/23 10:37:15 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/23 11:26:53 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <exception>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <limits>
 #include <cstring>
@@ -33,6 +34,7 @@ class PmergeMe
 
 		void parseInput(char **argv);
 		bool isValidPositiveInt(char *arg);
+		std::vector<size_t> generateJacobsthalIndices(size_t max);
 		void sortVector(std::vector<int> & vector);
 		void sortDeque(std::deque<int> & deque);
 		
