@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 09:47:16 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/22 15:41:01 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/23 10:38:10 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ PmergeMe& PmergeMe::operator=( const PmergeMe& other )
 /*								public methods  							  */
 /* ************************************************************************** */
 
+/* ******************************* constructors ***************************** */
+
 PmergeMe::PmergeMe(char **argv)
 {
 	size_t n_arg = 0;
@@ -65,40 +67,15 @@ PmergeMe::PmergeMe(char **argv)
 	parseInput(argv);
 }
 
-void PmergeMe::sortVector(std::vector<int> vector)
-{
-	if (vector.size() <= 1)
-		return ;
-	std::vector<int> small, big;
-	for (size_t i = 1; i < vector.size(); i+=2) {
-		if (vector[i] > vector[i - 1]) {
-			small.push_back(vector[i - 1]);
-			big.push_back(vector[i]);
-		}
-		else {
-			small.push_back(vector[i]);
-			big.push_back(vector[i - 1]);
-		}
-	}
-	if (vector.size() % 2 == 1)
-		big.push_back(vector.back());
-
-	sortVector(big);
-
-	
-	// a terminer
-	
-}
-
-/* Ce qu’il reste à faire  :
-
-Insérer chaque élément de small dans big, dans l’ordre d’origine (ou selon l’ordre calculé par Jacobsthal si tu veux aller plus loin).
-
-Utilise std::lower_bound ou insertion linéaire.*/
-
-/* ******************************* constructors ***************************** */
-
 /* ******************************** getters ********************************* */
+
+void PmergeMe::displaySortVectorDuration()
+{
+	std::cout << "Time to process a range of " << _vector.size()
+	<< " elements with std::vector : "
+	<< std::fixed << _vectorTime << " ms"
+	<< std::endl;
+}
 
 /* ******************************** setters ********************************* */
 
@@ -129,6 +106,12 @@ void PmergeMe::displayDeque()
 	std::cout << std::endl;
 }
 
+void PmergeMe::sort()
+{
+	sortVector(_vector);
+	// sortDeque(_deque);
+}
+
 /* ************************************************************************** */
 /*								private methods  							  */
 /* ************************************************************************** */
@@ -155,6 +138,39 @@ bool PmergeMe::isValidPositiveInt(char *arg)
 	if (l < 1 || l > static_cast<long>(std::numeric_limits<int>::max()) || *end != '\0')
 		return (false);
 	return (true);
+}
+
+void PmergeMe::sortVector(std::vector<int> & vector)
+{
+	if (vector.size() <= 1)
+		return ;
+
+	clock_t start = clock();
+
+	std::vector<int> small, big;
+	for (size_t i = 1; i < vector.size(); i+=2) {
+		if (vector[i] > vector[i - 1]) {
+			small.push_back(vector[i - 1]);
+			big.push_back(vector[i]);
+		}
+		else {
+			small.push_back(vector[i]);
+			big.push_back(vector[i - 1]);
+		}
+	}
+	if (vector.size() % 2 == 1)
+		big.push_back(vector.back());
+
+	sortVector(big);
+
+	for (size_t i = 0; i  < small.size(); i++) {
+		std::vector<int>::iterator it = std::lower_bound(big.begin(), big.end(), small[i]);
+		big.insert(it, small[i]);
+	}
+	vector = big;
+
+	clock_t end = clock();
+	_vectorTime = static_cast<double>(end - start) / CLOCKS_PER_SEC;
 }
 
 /* ************************************************************************** */

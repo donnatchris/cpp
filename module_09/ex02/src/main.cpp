@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 15:03:29 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/22 15:17:37 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/23 10:35:59 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int main(int ac, char **av)
         PmergeMe pm(av);
         std::cout << "Before:  ";
         pm.displayVector();
+        pm.sort();
+		std::cout << "After:   ";
+		pm.displayVector();
+
+		pm.displaySortVectorDuration();
    }
     catch(const std::exception& e)
     {
