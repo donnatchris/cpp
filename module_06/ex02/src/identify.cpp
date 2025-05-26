@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   identify.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 09:06:41 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/20 09:42:24 by chdonnat         ###   ########.fr       */
+/*   Updated: 2025/05/23 13:41:43 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -6,7 +6,7 @@
 #    By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 09:42:11 by chdonnat          #+#    #+#              #
-#    Updated: 2025/05/17 13:21:56 by christophed      ###   ########.fr        #
+#    Updated: 2025/05/23 13:53:05 by christophed      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC     :=	$(SRCDIR)/main.cpp \
 OBJ     := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
 
 CXX     := c++
-CXXFLAGS := -Wall -Wextra -Werror -Wshadow -std=c++98 -I$(INCDIR)
+CXXFLAGS := -Wall -Wextra -Werror -std=c++98 -I$(INCDIR)
 
 GREEN   := \033[1;32m
 CYAN    := \033[1;36m

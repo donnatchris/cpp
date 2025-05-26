@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 08:35:26 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/19 09:30:33 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/23 13:39:14 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,9 @@ static Base* create_C()
 	return (new C());
 }
 
-typedef Base* (*create)();
-
 Base* generate(void)
 {
+	typedef Base* (*create)();
 	create tab[3] = {create_A, create_B, create_C};
 	int i = rand() % 3;
 	return (tab[i]());

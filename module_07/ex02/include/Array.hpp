@@ -6,7 +6,7 @@
 /*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 11:05:15 by christophed       #+#    #+#             */
-/*   Updated: 2025/05/19 13:59:30 by christophed      ###   ########.fr       */
+/*   Updated: 2025/05/26 21:02:04 by christophed      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ class Array
 			else {
 				_ptr = new T[_size];
 			}
+			for (unsigned int i = 0; i < _size; i++)
+				_ptr[i] = T();
 		}
 
 		unsigned int size() const
