@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 16:07:51 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/21 18:11:36 by christophed      ###   ########.fr       */
+/*   Updated: 2025/07/01 09:11:55 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <iostream>
 #include <iomanip>
 #include <exception>
+#include <cstdlib>
+#include <algorithm>
 
 class BitcoinExchange
 {

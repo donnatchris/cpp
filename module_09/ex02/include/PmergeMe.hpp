@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: christophedonnat <christophedonnat@stud    +#+  +:+       +#+        */
+/*   By: chdonnat <chdonnat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 09:13:50 by chdonnat          #+#    #+#             */
-/*   Updated: 2025/05/23 11:26:53 by christophed      ###   ########.fr       */
+/*   Updated: 2025/07/01 09:34:10 by chdonnat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <deque>
+#include <algorithm>
+
 class PmergeMe
 {
 	private:
